@@ -1,0 +1,70 @@
+﻿@model MVCBiblioteca.Models.Livro
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="row">
+    <div class="col-md-4 ">
+        <img src="@Model.Capa" class="img-fluid h-100" alt="Alternate Text" />
+    </div>
+    <div class="col-md-8">
+        <h1>Detalhes</h1>
+
+        <div class="align-text-botton">
+            <h4>@Html.DisplayNameFor(model => Model.QuantidadeEstoque)</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Titulo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Titulo)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Autor)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Autor)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.AnoPublicacao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.AnoPublicacao)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Editora)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Editora)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Isbn)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Isbn)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Genero)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Genero)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.QuantidadeEstoque)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.QuantidadeEstoque)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Index" class="btn btn-primary">Voltar</a>
+            <a asp-action="Create" asp-controller="Emprestimos" class="btn btn-primary">Novo Emprestimo</a> 
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-success">Editar</a> 
+            <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-danger">Excluir</a>
+        </div>
+    </div>
+
+</div>
+

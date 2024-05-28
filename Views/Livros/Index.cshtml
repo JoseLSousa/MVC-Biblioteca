@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MVCBiblioteca.Models.Livro>
+
+@{
+    ViewData["Title"] = "Livros";
+}
+
+<h1>Livros</h1>
+
+<p>
+    <a asp-action="Create">Inserir livro</a>
+</p>
+
+<div class="container">
+    <div class="row-cols-lg-4 row">
+        @foreach (var item in Model)
+        {
+            <div class="card mb-2" style="width: 16rem; margin-left: 10px">
+                <img src="@item.Capa" class="card-img-top rounded card-img-top align-self-center mt-1" alt="..." style="height:15rem; width:fit-content">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Titulo</h5>
+                    <p class="card-text">@item.Descricao</p>
+                </div>
+                    <a  class="btn btn-primary mb-1" asp-action="Details" asp-route-id="@item.Id">Saiba mais</a>
+            </div>
+        }
+
+    </div>
+</div>
