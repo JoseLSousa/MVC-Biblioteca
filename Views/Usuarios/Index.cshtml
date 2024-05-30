@@ -3,12 +3,10 @@
 @{
     ViewData["Title"] = "Usuários";
 }
-
-<h1>Usuários</h1>
-
-<p>
-    <a asp-action="Create">Inserir usuário</a>
-</p>
+<div>
+    <h1>Usuários</h1>
+    <a asp-action="Create" class="btn btn-primary">Inserir usuário</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -28,26 +26,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroDocumento)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroDocumento)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info" title="Ver detalhes"> <i class="bi bi-eye"></i></a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" title="Editar usuário"><i class="bi bi-pencil fs-6"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" title="Excluir usuário"><i class="bi bi-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
